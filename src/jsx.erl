@@ -434,8 +434,7 @@ wrap_with_object({Title, JSON, Term, Events}) ->
 
 
 sane_float_to_list(X) ->
-    [Output] = io_lib:format("~p", [X]),
-    Output.
+    lists:flatten(io_lib:format("~p", [X])).
 
 
 incremental_decode(JSON) ->

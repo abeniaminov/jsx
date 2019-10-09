@@ -118,7 +118,7 @@ encode(literal, Literal, _Config) ->
 encode(integer, Integer, _Config) ->
     erlang:integer_to_list(Integer);
 encode(float, Float, _Config) ->
-    io_lib:format("~p", [Float]).
+    [lists:flatten(io_lib:format("~p", [Float]))].
 
 
 space(Config) ->
